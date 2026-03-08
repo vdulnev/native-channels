@@ -48,9 +48,9 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0xFFF5F7FA),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar.large(
-            title: const Text('Native Channels\nCourse'),
-            backgroundColor: const Color(0xFF0553B1),
+          const SliverAppBar.large(
+            title: Text('Native Channels\nCourse'),
+            backgroundColor: Color(0xFF0553B1),
             foregroundColor: Colors.white,
           ),
           SliverPadding(

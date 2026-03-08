@@ -100,15 +100,15 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
             elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding: const EdgeInsets.all(14),
+            child: const Padding(
+              padding: EdgeInsets.all(14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Available Codecs',
+                  Text('Available Codecs',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   _CodecRow('StringCodec', 'UTF-8 strings',
                       'Simple text messages'),
                   _CodecRow('JSONMessageCodec', 'JSON → bytes',
@@ -139,7 +139,7 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
-                  _CodeSnippet(
+                  const _CodeSnippet(
                     code: "const _channel = BasicMessageChannel<String>(\n"
                         "  'com.example.nativechannels/string',\n"
                         "  StringCodec(),\n"
@@ -188,7 +188,7 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
-                  _CodeSnippet(
+                  const _CodeSnippet(
                     code: "const _channel = BasicMessageChannel<Object?>(\n"
                         "  'com.example.nativechannels/json',\n"
                         "  JSONMessageCodec(),\n"
@@ -243,7 +243,7 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
           ],
 
           // Native implementations
-          _NativeExpandable(
+          const _NativeExpandable(
             title: 'Android — Kotlin (StringCodec)',
             code: '''// MainActivity.kt
 BasicMessageChannel(
@@ -261,7 +261,7 @@ val channel = BasicMessageChannel(...)
 channel.send("Hello from Android!")''',
           ),
           const SizedBox(height: 8),
-          _NativeExpandable(
+          const _NativeExpandable(
             title: 'iOS — Swift (JSONMessageCodec)',
             code: '''// AppDelegate.swift
 FlutterBasicMessageChannel(
@@ -278,7 +278,7 @@ FlutterBasicMessageChannel(
 }''',
           ),
           const SizedBox(height: 8),
-          _NativeExpandable(
+          const _NativeExpandable(
             title: 'Windows — C++ (StringCodec & JSONMessageCodec)',
             code: '''// channel_setup.cpp
 

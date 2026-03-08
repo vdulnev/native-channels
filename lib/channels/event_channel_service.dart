@@ -53,7 +53,7 @@ class EventChannelService {
   Stream<Map<String, double>> locationStream({int intervalMs = 1000}) {
     // Pass arguments to receiveBroadcastStream; native receives them in
     // its onListen callback.
-    return EventChannel('com.example.nativechannels/location')
+    return const EventChannel('com.example.nativechannels/location')
         .receiveBroadcastStream({'intervalMs': intervalMs}).map((event) {
       final raw = Map<String, dynamic>.from(event as Map);
       return {

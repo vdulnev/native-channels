@@ -69,10 +69,10 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _ConceptBox(
-            color: const Color(0xFFE8F5E9),
-            borderColor: const Color(0xFFA5D6A7),
-            titleColor: const Color(0xFF2E7D32),
+          const _ConceptBox(
+            color: Color(0xFFE8F5E9),
+            borderColor: Color(0xFFA5D6A7),
+            titleColor: Color(0xFF2E7D32),
             title: 'How EventChannel works',
             body: 'EventChannel wraps a native StreamHandler. When Dart calls '
                 'receiveBroadcastStream().listen(), the native onListen is '
@@ -96,7 +96,7 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
-                  _CodeSnippet(
+                  const _CodeSnippet(
                     code: 'final stream = _channel\n'
                         '    .receiveBroadcastStream()\n'
                         '    .map((e) => e as int);\n\n'
@@ -140,7 +140,7 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
-                  _CodeSnippet(
+                  const _CodeSnippet(
                     code: 'stream.map((event) {\n'
                         '  final raw = Map<String,dynamic>.from(event);\n'
                         '  return {\n'
@@ -174,7 +174,7 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
           const SizedBox(height: 24),
 
           // ── Native code ──
-          _NativeCodeSection(
+          const _NativeCodeSection(
             windowsCode: '''// channel_setup.cpp
 // flutter::StreamHandlerFunctions lets you pass lambdas
 // instead of subclassing flutter::StreamHandler.
