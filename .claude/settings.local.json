@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(flutter --version)"
+      "Bash(flutter --version)",
+      "Bash(flutter create --platforms=macos .)",
+      "Bash(flutter analyze)",
+      "Bash(dart fix --apply)",
+      "Bash(flutter build macos --debug)"
     ]
   }
 }
