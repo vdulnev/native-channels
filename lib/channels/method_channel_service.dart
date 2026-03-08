@@ -62,7 +62,16 @@ class MethodChannelService {
   }
 
   // -------------------------------------------------------------------------
-  // Example 4 — Native calls back into Dart (reverse MethodChannel).
+  // Example 4 — Heavy work on a native background thread.
+  // -------------------------------------------------------------------------
+  /// Asks native to run expensive work off the main thread and return the result.
+  Future<String> heavyWork() async {
+    final result = await _channel.invokeMethod<String>('heavyWork');
+    return result ?? '';
+  }
+
+  // -------------------------------------------------------------------------
+  // Example 5 — Native calls back into Dart (reverse MethodChannel).
   // -------------------------------------------------------------------------
   /// Register a handler so native code can invoke Dart methods on this channel.
   void registerDartHandler() {

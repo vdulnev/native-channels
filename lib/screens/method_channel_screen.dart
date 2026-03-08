@@ -14,6 +14,7 @@ class _MethodChannelScreenState extends State<MethodChannelScreen> {
   String _deviceInfo = '—';
   int _sum = 0;
   String _fileContent = '—';
+  String _heavyWorkResult = '—';
   bool _loading = false;
 
   Future<void> _runGetDeviceInfo() async {
@@ -30,6 +31,15 @@ class _MethodChannelScreenState extends State<MethodChannelScreen> {
     final sum = await _service.addNumbers(17, 25);
     setState(() {
       _sum = sum;
+      _loading = false;
+    });
+  }
+
+  Future<void> _runHeavyWork() async {
+    setState(() => _loading = true);
+    final result = await _service.heavyWork();
+    setState(() {
+      _heavyWorkResult = result;
       _loading = false;
     });
   }
@@ -57,7 +67,7 @@ class _MethodChannelScreenState extends State<MethodChannelScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _ConceptCard(
+          const _ConceptCard(
             title: 'How MethodChannel works',
             body: 'Dart calls invokeMethod(name, args) → Flutter encodes the '
                 'call → native MethodCallHandler receives it → native executes '
@@ -93,8 +103,17 @@ class _MethodChannelScreenState extends State<MethodChannelScreen> {
             onRun: _runReadFile,
             loading: _loading,
           ),
+          const SizedBox(height: 12),
+          _ExampleCard(
+            title: 'Example 4 — Heavy work on background thread',
+            codeSnippet: "final result = await _channel\n"
+                "    .invokeMethod<String>('heavyWork');",
+            result: _heavyWorkResult,
+            onRun: _runHeavyWork,
+            loading: _loading,
+          ),
           const SizedBox(height: 24),
-          _NativeCodeCard(
+          const _NativeCodeCard(
             title: 'Android — Kotlin',
             code: '''// In MainActivity.kt
 MethodChannel(flutterEngine.dartExecutor.binaryMessenger,
@@ -123,7 +142,7 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger,
   }''',
           ),
           const SizedBox(height: 12),
-          _NativeCodeCard(
+          const _NativeCodeCard(
             title: 'iOS — Swift',
             code: '''// In AppDelegate.swift
 let channel = FlutterMethodChannel(
@@ -155,7 +174,7 @@ channel.setMethodCallHandler { call, result in
 }''',
           ),
           const SizedBox(height: 12),
-          _NativeCodeCard(
+          const _NativeCodeCard(
             title: 'Windows — C++',
             code: '''// channel_setup.cpp
 // Arguments / return values use flutter::EncodableValue,
