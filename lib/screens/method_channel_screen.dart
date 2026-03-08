@@ -47,7 +47,7 @@ class _MethodChannelScreenState extends State<MethodChannelScreen> {
   Future<void> _runReadFile() async {
     setState(() => _loading = true);
     try {
-      final content = await _service.readNativeFile('sample.txt');
+      final content = await _service.readNativeFile('sample1.txt');
       setState(() => _fileContent = content);
     } catch (e) {
       setState(() => _fileContent = e.toString());
