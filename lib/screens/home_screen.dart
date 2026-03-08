@@ -3,6 +3,8 @@ import 'method_channel_screen.dart';
 import 'event_channel_screen.dart';
 import 'message_channel_screen.dart';
 import 'advanced_screen.dart';
+import 'binary_channel_screen.dart';
+import 'types_channel_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,6 +41,22 @@ class HomeScreen extends StatelessWidget {
       icon: Icons.settings_suggest_rounded,
       color: Color(0xFFBF360C),
       screen: AdvancedScreen(),
+    ),
+    _LessonCard(
+      number: '05',
+      title: 'BinaryCodec',
+      subtitle: 'Raw byte transfer with zero encoding overhead',
+      icon: Icons.memory_rounded,
+      color: Color(0xFF00695C),
+      screen: BinaryChannelScreen(),
+    ),
+    _LessonCard(
+      number: '06',
+      title: 'Type Echo Demo',
+      subtitle: 'StandardMessageCodec round-trip type fidelity',
+      icon: Icons.compare_arrows_rounded,
+      color: Color(0xFF4A148C),
+      screen: TypesChannelScreen(),
     ),
   ];
 

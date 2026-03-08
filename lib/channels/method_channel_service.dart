@@ -87,3 +87,18 @@ class MethodChannelService {
     });
   }
 }
+
+// =============================================================================
+// TypesChannelService — MethodChannel type echo demo
+// =============================================================================
+// Demonstrates StandardMessageCodec type fidelity: each supported Dart type
+// is sent to native and echoed back unchanged, proving round-trip correctness.
+
+class TypesChannelService {
+  static const _channel = MethodChannel('com.example.nativechannels/types');
+
+  /// Echo [value] through native and return it unchanged.
+  /// Native implementation: result.success(call.arguments)
+  Future<Object?> echoTypes(Object? value) =>
+      _channel.invokeMethod<Object?>('echoTypes', value);
+}
