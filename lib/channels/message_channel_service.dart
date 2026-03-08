@@ -112,6 +112,18 @@ class KeyValueMessageService {
   }
 }
 
+// ─── Channel 4: Binary codec (raw bytes) ─────────────────────────────────────
+
+class BinaryMessageService {
+  static const _channel = BasicMessageChannel<ByteData?>(
+    'com.example.nativechannels/binary',
+    BinaryCodec(),
+  );
+
+  /// Send raw [ByteData] to native and receive a transformed [ByteData] reply.
+  Future<ByteData?> sendBytes(ByteData data) => _channel.send(data);
+}
+
 // ─── Windows channel (StandardMessageCodec) ──────────────────────────────────
 //
 // Windows ships only StandardMessageCodec and StandardMethodCodec.
