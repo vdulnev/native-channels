@@ -50,8 +50,7 @@ channel.setMethodCallHandler { call, result in
           _TopicSection(
             number: '2',
             title: 'Background isolates (Flutter 3.7+)',
-            body:
-                'To call a platform channel from a background Dart isolate, '
+            body: 'To call a platform channel from a background Dart isolate, '
                 'capture the RootIsolateToken on the main isolate and pass it '
                 'to your spawned isolate:',
             code: '''// Step 1: capture token on main isolate
@@ -78,7 +77,8 @@ void _bgEntry(List<dynamic> args) async {
             number: '3',
             title: 'Channel selection guide',
             body: 'Choose the right channel for your use-case:',
-            code: '''┌─────────────────────┬──────────────────────────────────────────┐
+            code:
+                '''┌─────────────────────┬──────────────────────────────────────────┐
 │ Channel type        │ Best for                                 │
 ├─────────────────────┼──────────────────────────────────────────┤
 │ MethodChannel       │ Discrete requests: get battery, open     │
@@ -95,8 +95,7 @@ void _bgEntry(List<dynamic> args) async {
           _TopicSection(
             number: '4',
             title: 'Error codes — best practice',
-            body:
-                'Always use meaningful error codes in PlatformException so '
+            body: 'Always use meaningful error codes in PlatformException so '
                 'Dart callers can handle specific failure modes:',
             code: '''// Android — well-structured errors
 when (call.method) {
@@ -130,8 +129,7 @@ try {
           _TopicSection(
             number: '5',
             title: 'Unit testing with mock channels',
-            body:
-                'Never run real platform channels in unit tests. '
+            body: 'Never run real platform channels in unit tests. '
                 'Use setMockMethodCallHandler to inject fakes:',
             code: '''// test/method_channel_test.dart
 void main() {
@@ -312,9 +310,8 @@ class _SummaryCard extends StatelessWidget {
           ),
           SizedBox(height: 12),
           Text('Next steps:',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold)),
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           SizedBox(height: 4),
           Text(
             '• Build a plugin package wrapping a real native SDK\n'

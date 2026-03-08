@@ -61,7 +61,8 @@ class DataTypesDemo {
 // to allow channel calls from background isolates.
 
 class BackgroundChannelExample {
-  static const _channel = MethodChannel('com.example.nativechannels/background');
+  static const _channel =
+      MethodChannel('com.example.nativechannels/background');
 
   /// Call this once from the main isolate to grab the token, then pass the
   /// token + method channel name to your background isolate.

@@ -93,8 +93,8 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text('Example 1 — Battery level stream',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
                   const _CodeSnippet(
                     code: 'final stream = _channel\n'
@@ -137,8 +137,8 @@ class _EventChannelScreenState extends State<EventChannelScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text('Example 2 — Accelerometer (Map stream)',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
                   const _CodeSnippet(
                     code: 'stream.map((event) {\n'
@@ -304,8 +304,7 @@ class _ConceptBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, color: titleColor)),
+              style: TextStyle(fontWeight: FontWeight.bold, color: titleColor)),
           const SizedBox(height: 6),
           Text(body, style: const TextStyle(height: 1.5, fontSize: 13)),
         ],
@@ -347,14 +346,10 @@ class _StatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: active
-            ? const Color(0xFFE8F5E9)
-            : Colors.grey.shade100,
+        color: active ? const Color(0xFFE8F5E9) : Colors.grey.shade100,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-            color: active
-                ? const Color(0xFF4CAF50)
-                : Colors.grey.shade300),
+            color: active ? const Color(0xFF4CAF50) : Colors.grey.shade300),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -371,9 +366,7 @@ class _StatusBadge extends StatelessWidget {
           Text(label,
               style: TextStyle(
                   fontSize: 12,
-                  color: active
-                      ? const Color(0xFF2E7D32)
-                      : Colors.black45)),
+                  color: active ? const Color(0xFF2E7D32) : Colors.black45)),
         ],
       ),
     );
@@ -394,8 +387,8 @@ class _AxisRow extends StatelessWidget {
           SizedBox(
             width: 20,
             child: Text(axis,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 13)),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
           ),
           const SizedBox(width: 8),
           Expanded(
@@ -407,8 +400,7 @@ class _AxisRow extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Text(value.toStringAsFixed(2),
-              style: const TextStyle(
-                  fontFamily: 'monospace', fontSize: 12)),
+              style: const TextStyle(fontFamily: 'monospace', fontSize: 12)),
         ],
       ),
     );

@@ -278,8 +278,8 @@ class _ExampleCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 14)),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
             const SizedBox(height: 10),
             Container(
               width: double.infinity,
@@ -299,8 +299,8 @@ class _ExampleCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(result,
-                      style: const TextStyle(
-                          color: Colors.black54, fontSize: 13)),
+                      style:
+                          const TextStyle(color: Colors.black54, fontSize: 13)),
                 ),
                 FilledButton(
                   onPressed: loading ? null : onRun,
@@ -358,9 +358,7 @@ class _NativeCodeCardState extends State<_NativeCodeCard> {
                           fontWeight: FontWeight.w500)),
                   const Spacer(),
                   Icon(
-                    _expanded
-                        ? Icons.expand_less
-                        : Icons.expand_more,
+                    _expanded ? Icons.expand_less : Icons.expand_more,
                     color: Colors.white54,
                     size: 18,
                   ),

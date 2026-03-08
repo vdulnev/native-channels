@@ -80,8 +80,7 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
               children: [
                 Text('How BasicMessageChannel works',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF6A1B9A))),
+                        fontWeight: FontWeight.bold, color: Color(0xFF6A1B9A))),
                 SizedBox(height: 6),
                 Text(
                   'Unlike MethodChannel, BasicMessageChannel has no method '
@@ -106,19 +105,19 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Available Codecs',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                   SizedBox(height: 10),
-                  _CodecRow('StringCodec', 'UTF-8 strings',
-                      'Simple text messages'),
+                  _CodecRow(
+                      'StringCodec', 'UTF-8 strings', 'Simple text messages'),
                   _CodecRow('JSONMessageCodec', 'JSON → bytes',
                       'Structured data (List, Map)'),
-                  _CodecRow('StandardMessageCodec',
-                      'Efficient binary', 'Default for Method/EventChannel'),
+                  _CodecRow('StandardMessageCodec', 'Efficient binary',
+                      'Default for Method/EventChannel'),
                   _CodecRow('BinaryCodec', 'Raw ByteData',
                       'Images, audio, custom binary'),
-                  _CodecRow('Custom', 'You define it',
-                      'Protobuf, MessagePack, etc.'),
+                  _CodecRow(
+                      'Custom', 'You define it', 'Protobuf, MessagePack, etc.'),
                 ],
               ),
             ),
@@ -136,8 +135,8 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text('Example 1 — StringCodec',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
                   const _CodeSnippet(
                     code: "const _channel = BasicMessageChannel<String>(\n"
@@ -185,8 +184,8 @@ class _MessageChannelScreenState extends State<MessageChannelScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text('Example 2 — JSONMessageCodec',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 14)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
                   const _CodeSnippet(
                     code: "const _channel = BasicMessageChannel<Object?>(\n"
@@ -365,8 +364,8 @@ class _CodecRow extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 12, fontWeight: FontWeight.w500)),
                 Text(useCase,
-                    style: const TextStyle(
-                        fontSize: 12, color: Colors.black45)),
+                    style:
+                        const TextStyle(fontSize: 12, color: Colors.black45)),
               ],
             ),
           ),
@@ -429,8 +428,8 @@ class _NativeExpandableState extends State<_NativeExpandable> {
                   const Icon(Icons.code, color: Color(0xFF569CD6), size: 16),
                   const SizedBox(width: 8),
                   Text(widget.title,
-                      style: const TextStyle(
-                          color: Colors.white70, fontSize: 13)),
+                      style:
+                          const TextStyle(color: Colors.white70, fontSize: 13)),
                   const Spacer(),
                   Icon(_open ? Icons.expand_less : Icons.expand_more,
                       color: Colors.white54, size: 18),
